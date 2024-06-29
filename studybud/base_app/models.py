@@ -6,7 +6,7 @@ class Room(models.Model):
     host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     topic = models.ForeignKey('Topic', on_delete=models.SET_NULL, null=True) 
     name = models.CharField(max_length=200)
-    decription = models.TextField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
     # participants =
     updated = models.DateTimeField(auto_now=True) # when the room was updated every time
     created = models.DateTimeField(auto_now_add=True) # when the room was created only once
@@ -19,7 +19,7 @@ class Room(models.Model):
 
 class Topic(models.Model):
     name = models.CharField(max_length=200)
-    decription = models.TextField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
     
