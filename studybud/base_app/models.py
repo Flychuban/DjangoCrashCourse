@@ -11,6 +11,9 @@ class Room(models.Model):
     updated = models.DateTimeField(auto_now=True) # when the room was updated every time
     created = models.DateTimeField(auto_now_add=True) # when the room was created only once
     
+    class Meta:
+        ordering = ['-updated', '-created']
+    
     def __str__(self):
         return self.name
 
