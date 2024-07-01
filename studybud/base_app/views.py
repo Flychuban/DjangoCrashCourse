@@ -26,6 +26,10 @@ def home(request):
     }
     return render(request, 'base_app/home.html', context)
 
+def logoutUser(request):
+    logout(request)
+    return redirect('home')
+
 def loginPage(request):
     if request.method == 'POST':
         username = request.POST.get('username')
