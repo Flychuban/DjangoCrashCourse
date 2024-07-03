@@ -33,5 +33,8 @@ class Message(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     
+    class Meta:
+        ordering = ['-updated', '-created']
+        
     def __str__(self):
-        return self.body[:50]
+        return self.body[0:50]
